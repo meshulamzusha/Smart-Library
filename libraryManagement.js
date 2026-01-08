@@ -3,7 +3,7 @@ import { Book } from "./book.js";
 export class LibraryManagement {
     static addBook(library, book) {
         const isIdExist = library.find(b => b.id == book.id);
-        if (!isIdExist) {
+        if (isIdExist) {
             throw new Error(`book with id ${book.id} already exist`);
         }
 
